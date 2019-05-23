@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: config-client
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: root
+    password: root

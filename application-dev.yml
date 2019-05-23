@@ -13,17 +13,20 @@ spring:
     proxy-target-class: true
     auto: true
   rabbitmq:
-    host: paascloud-mq-rabbit
+    host: 127.0.0.1
+#   host: paascloud-mq-rabbit
     port: 5672
     username: guest
     password: guest
   redis:
-    host: paascloud-db-redis
-    password: paascloud@redis
+#    host: paascloud-db-redis
+    host: 127.0.0.1
+#    password: paascloud@redis
     port: 6379
     timeout: 0
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+#配置stat功能（监控）、wall功能（sql防火墙），stat是统计，wall是SQL防火墙，防SQL注入的
     filters: stat,wall
     druid:
       initial-size: 50
@@ -33,9 +36,11 @@ spring:
       time-between-eviction-runs-millis: 60000
       min-evictable-idle-time-millis: 300000
       web-stat-filter:
+#设置不统计哪些URL
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
       stat-view-servlet:
         allow:
+#设置监控页面的登录名和密码
         login-username: admin
         login-password: admin
   mail:
