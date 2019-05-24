@@ -9,5 +9,4 @@ security:
   user:
     name: root
     password: root
-my:
-  name: jack
+
